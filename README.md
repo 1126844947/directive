@@ -1,3 +1,3 @@
 # directive
 the plugins
-[DEMO](./multipleSelection/index.html)
+[DEMO](multipleSelection/index.html)
