@@ -1,0 +1,86 @@
+
+
+.multiSelect {
+    width: 100%;
+    display: inline-block;
+    margin:20px;
+}
+
+.multiSelect_ul{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 6px 12px rgba(68,153,218,.575);
+    box-shadow: 0 6px 12px rgba(68,153,218,.575);
+    opacity: 1;
+}
+.multiSelect_ul>li>a{
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 600;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    color: #4499DA;
+    cursor: pointer;
+}
+.multiSelect_ul>li>a:hover{
+    color: #00476F;
+}
+.multiSelect_div{
+    /*border-radius: 5px;*/
+    border: 1px solid #4499DA;
+    padding-right: 8px;
+    background-color: white;
+}
+
+.multiSelect_span{
+    margin: 3px 8px;
+    margin-right: 0px;
+    height: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 3px 13px;
+    background-color: #4499DA;
+    border: 1px solid #4499DA;
+    color: white;
+}
+
+.multiSelect_input{
+    width: 70px;
+    height: 30px;
+    margin: 3px 8px;
+    margin-right: 0px;
+    border: 1px solid #4499DA;
+    border-radius: 30px;
+    outline: none;
+    padding: 3px 13px;
+    display: inline-block;
+    color: #4499DA;
+}
+
+.multiSelect_close{
+    color: white;
+    text-shadow: none;
+    font-weight: normal;
+    opacity: .8;
+}
+
+.multiSelect_close:hover{
+    opacity: 1;
+    color: #00476F;
+}
+

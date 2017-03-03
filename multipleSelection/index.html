@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>myDirective</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./multipleSelection.css">
+    <style>
+        .myDiv{
+            width: 300px;
+            height: 500px;
+        }
+        .my_multiSelect {
+            width: 350px;
+            display: inline-block;
+            margin:20px;
+        }
+        .my_multiSelect .multiSelect_span{
+            background-color: #2E8BA0;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+
+
+    <div class="myDiv">
+        <!--<my-select conf="select_conf"></my-select>-->
+
+        <my-select conf="select_conf2"></my-select>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        1选择的结果为
+        <ul>
+            <li ng-repeat="x in data track by $index">{{x}}</li>
+        </ul>
+    </div>
+    <div>
+        2选择的结果为
+        <ul>
+        <li ng-repeat="x in data2 track by $index">{{x}}</li>
+    </ul>
+    </div>
+
+    <script src="./angular.min.js"></script>
+    <script src="./multipleSelection.js"></script>
+    <script>
+        var app = angular.module("app",["multipleSelection"]);
+        app.controller("myCtrl",function($scope,$timeout){
+            $scope.statuses = [{
+                id: 1,
+                name: "Low"
+            }, {
+                id: 2,
+                name: "Normal"
+            }, {
+                id: 3,
+                name: "High"
+            }, {
+                id: 4,
+                name: "Urgent"
+            }, {
+                id: 5,
+                name: "Immediate"
+            }];
+
+            $scope.statu = $scope.statuses[0].id;
+
+            $scope.data=[333,"dddd"];
+
+            $scope.select_conf = {
+
+                list:$scope.statuses,
+                showAttr:"name",//有值表示传入的list中的内容是对象，反之则不是
+                result:$scope.data,
+                input:false,//是否需要输入框
+                className:"my_multiSelect"//类名
+            };
+
+
+            $scope.shuzu = ["aaa","bbb","ccc"];
+            $scope.data2 = ["eeee"];
+
+            $timeout(function(){
+                $scope.data2 = ["sssss"];
+//                $scope.$apply();
+            },100);
+
+            $scope.select_conf2 = {
+                list:$scope.shuzu,
+                result:$scope.data2,
+                input:true
+
+            };
+
+            $scope.$watch("data2",function(newValue,oldValue){
+                if(newValue != oldValue){
+                    $scope.select_conf2.result = newValue;
+                }
+            })
+        });
+
+    </script>
+</body>
+</html>
