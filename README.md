@@ -1,3 +1,3 @@
 # directive
 the plugins
-<a href = 'multipleSelect/index.html'>DEMO</a>
+[DEMO](./multipleSelection/index.html)
